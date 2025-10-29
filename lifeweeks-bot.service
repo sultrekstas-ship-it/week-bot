@@ -1,0 +1,21 @@
+[Unit]
+Description=Life Weeks Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=your_username
+WorkingDirectory=/path/to/bot/directory
+ExecStart=/usr/bin/python3 /path/to/bot/directory/bot.py
+Restart=always
+RestartSec=10
+
+# Логирование
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=lifeweeks-bot
+
+[Install]
+WantedBy=multi-user.target
+
+
